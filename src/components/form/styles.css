@@ -1,0 +1,23 @@
+.form_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+
+.form {
+    display: grid;
+    align-items: flex-end;
+    grid-template-columns: 3fr 1fr 1fr;
+    gap: 10px;
+    padding-bottom: 10px;
+    
+    @media screen and (max-width: 650px) {
+        .input {
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+    }
+}
