@@ -4,6 +4,8 @@ import React from "react";
 import EpisodCard from "components/episodeCard/episodeCard";
 import { useStore } from "store/StoreProvider";
 import { observer } from "mobx-react-lite";
+import { useSuspenseQuery } from '@apollo/client';
+import { GET_EPISODE_BY_ID, getEpisodeQueryVariables } from 'serverAPI/serverQueries';
 
 const mockCard = {
   name: "Dog days are over",
@@ -11,9 +13,22 @@ const mockCard = {
   id: 1,
 };
 
-const Episodes = observer(() => {
+const FoundEpisodes = observer(() => {
   const store = useStore();
-  console.log(store.searchValue);
+
+   // const { data } = useSuspenseQuery(GET_EPISODE_BY_ID, {
+   //     variables: getEpisodeQueryVariables(store.searchValue)
+   // })
+
+    if (store.searchValue.length === 0) {
+        return  null;
+    }
+
+
+
+   // console.log(data);
+
+
 
   return (
     store.searchValue && (
@@ -24,4 +39,4 @@ const Episodes = observer(() => {
   );
 });
 
-export default Episodes;
+export default FoundEpisodes;
