@@ -3,7 +3,7 @@ import Image from "next/image";
 import logo from "../../public/logo.png";
 import Form from "components/form/Form";
 import { FC } from "react";
-import Episodes from "components/episodes/Episodes";
+import FoundEpisodes from "components/foundEpisodes/FoundEpisodes";
 
 const Page: FC = () => {
   return (
@@ -16,7 +16,7 @@ const Page: FC = () => {
         height={90}
       />
       <Form />
-      <Episodes />
+      <FoundEpisodes />
     </div>
   );
 };
