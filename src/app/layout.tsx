@@ -1,5 +1,6 @@
 import React from "react";
 import StoreProvider from "store/StoreProvider";
+import { ApolloWrapper } from 'serverAPI/ApolloWrapper';
 
 export default function RootLayout({
   children,
@@ -13,7 +14,11 @@ export default function RootLayout({
         <title>Rick&Morty App</title>
       </head>
       <body suppressHydrationWarning={true}>
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>
+            <ApolloWrapper>
+                {children}
+            </ApolloWrapper>
+        </StoreProvider>
       </body>
     </html>
   );
