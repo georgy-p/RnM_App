@@ -23,10 +23,8 @@ const Form: FC = () => {
   const handleSelect = () => setIsNewest(!isNewest);
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(store.searchValue);
     const normalizedValue = inputValue.trim();
     store.setSearchValue(normalizedValue);
-    console.log(store.searchValue);
     setInputValue("");
     setIsNewest(true);
   };
@@ -41,6 +39,7 @@ const Form: FC = () => {
       <form className={"form"} onSubmit={handleSubmit}>
         <TextField
           className={"input"}
+          value={inputValue}
           inputRef={(input) => input && input.focus()}
           placeholder="Enter the name of the episode"
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
