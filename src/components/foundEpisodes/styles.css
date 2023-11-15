@@ -1,3 +1,11 @@
-.episodes {
+.episodesContainer {
+    padding-top: 20px;
+}
 
+.episodes {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 10px;
+    padding-bottom: 30px;
 }
