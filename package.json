@@ -4,31 +4,34 @@
   "description": "Web App for find 'Rick and Morty' information",
   "main": "src/app/index.ts",
   "scripts": {
-    "dev": "next dev",
+    "dev": "rm -rf .next && next dev ",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix"
   },
   "author": "Georgy Pigar",
   "license": "ISC",
   "dependencies": {
-    "@apollo/client": "^3.8.7",
-    "@apollo/experimental-nextjs-app-support": "^0.5.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.17",
     "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
     "mobx": "^6.11.0",
     "mobx-react-lite": "^4.0.5",
     "next": "^14.0.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^14.0.2",
     "@types/node": "20.9.0",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "eslint": "^8.53.0",
+    "eslint-config-next": "^14.0.2",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
