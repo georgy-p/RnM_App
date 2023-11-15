@@ -8,6 +8,9 @@ import "../styles/global.css";
 export const metadata: Metadata = {
   title: "Rick&Morty App",
   description: "Helps you to find episodes",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 export default function RootLayout({
   children,
@@ -16,10 +19,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ru'>
-      <head>
-        <title>Rick&Morty App</title>
-        <link rel='icon' href='/favicon.ico' sizes='any' />
-      </head>
       <body suppressHydrationWarning={true}>
         <StoreProvider>
           <Header />
