@@ -1,0 +1,45 @@
+.episode {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subtitle {
+    padding-top: 30px;
+}
+
+.characters {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.hero {
+    padding-left: 20px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.Alive {
+    color: darkgreen;
+}
+
+.Dead {
+    color: darkred;
+}
+
+.unknown {
+    color: slategrey;
+}
