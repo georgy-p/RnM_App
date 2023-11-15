@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useStore } from "store/StoreProvider";
 import { observer } from "mobx-react-lite";
 import {
@@ -12,7 +12,7 @@ import {
 import EpisodeCard from "components/episodeCard/episodeCard";
 import { request } from "graphql-request";
 import "./styles.css";
-import { Button, Skeleton } from "@mui/material";
+import { Button } from "@mui/material";
 import { sortByNewest, sortByOldest } from "utils/sorters";
 
 const FoundEpisodes = observer(() => {
@@ -31,7 +31,7 @@ const FoundEpisodes = observer(() => {
       store.setEpisodes(sortedEpisodes);
       setShowedEpisodes(sortedEpisodes.slice(0, 6));
     });
-  }, [store.isSubmitted]);
+  }, [store, store.isSubmitted]);
 
   const episodes = store.getEpisodes();
 
