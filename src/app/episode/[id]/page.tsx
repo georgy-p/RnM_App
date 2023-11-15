@@ -6,7 +6,7 @@ import {
   getEpisodeQueryVariables,
 } from "serverAPI/serverQueries";
 import { Typography } from "@mui/material";
-import React, from "react";
+import React from "react";
 import "./styles.css";
 
 type Props = {
