@@ -1,29 +1,29 @@
-"use client";
 import React, { FC } from "react";
 import { Card, CardActionArea, Typography } from "@mui/material";
+import Link from "next/link";
 
-interface CardProps {
-  card: {
+interface Props {
+  episode: {
     name: string;
-    airDate: string;
-    id: number;
+    air_date: string;
+    id: string;
   };
 }
-const EpisodeCard: FC<CardProps> = ({ card }) => {
-  const handleClick = () => console.log(card.id);
-
+const EpisodeCard: FC<Props> = ({ episode }) => {
   return (
-    <Card sx={{ minWidth: 275, maxWidth: 510 }}>
-      <CardActionArea sx={{ padding: "20px" }} onClick={handleClick}>
-        <Typography color="text.secondary">Episode name:</Typography>
-        <Typography sx={{ paddingTop: "10px" }} variant="h5">
-          &ldquo;{card.name}&ldquo;
-        </Typography>
-        <Typography sx={{ paddingTop: "25px" }} color="text.secondary">
-          Air date:<span style={{ color: "black" }}>{card.airDate}</span>
-        </Typography>
-      </CardActionArea>
-    </Card>
+    <Link href={`/episode/${episode.id}`} style={{ textDecoration: "none" }}>
+      <Card sx={{ minWidth: 275, maxWidth: 510 }}>
+        <CardActionArea sx={{ padding: "20px" }}>
+          <Typography color='text.secondary'>Episode name:</Typography>
+          <Typography sx={{ paddingTop: "10px" }} variant='h5'>
+            &ldquo;{episode.name}&ldquo;
+          </Typography>
+          <Typography sx={{ paddingTop: "25px" }} color='text.secondary'>
+            Air date: <span style={{ color: "black" }}>{episode.air_date}</span>
+          </Typography>
+        </CardActionArea>
+      </Card>
+    </Link>
   );
 };
 
